@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=GRUB Theme Installer
+Comment=Instala temas personalizados no GRUB2
+Exec=grub-theme-installer
+Icon=grub-theme-installer
+Terminal=false
+Categories=System;Settings;
+StartupWMClass=grub-theme-installer

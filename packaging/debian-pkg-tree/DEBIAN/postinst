@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# ═══════════════════════════════════════════════════════════════════════════
+#  GRUB Theme Installer — postinst
+#
+#  Executado pelo dpkg/apt após copiar os arquivos do pacote, já como root.
+#  Responsável por:
+#    1. Instalar o PySide6 (não há pacote nativo no Debian 11/12 estável,
+#       só a partir do Debian 13/trixie — então instalamos via pip aqui).
+#    2. Atualizar o cache de ícones e o banco de dados de .desktop files.
+# ═══════════════════════════════════════════════════════════════════════════
+set -e
+
+APP_DIR="/opt/grub-theme-installer"
+
+echo "Configurando GRUB Theme Installer..."
+
+# ── 1. PySide6 ────────────────────────────────────────────────────────────
+# Só instala se ainda não houver um PySide6 utilizável (evita reinstalar
+# em upgrades do pacote, e respeita uma instalação via apt do Debian 13+).
+if ! python3 -c "import PySide6" >/dev/null 2>&1; then
+    echo "  -> Instalando PySide6 (pode levar alguns minutos)..."
+    if pip3 install --quiet --upgrade PySide6 2>/dev/null; then
+        echo "  -> PySide6 instalado."
+    elif pip3 install --quiet --upgrade PySide6 --break-system-packages 2>/dev/null; then
+        echo "  -> PySide6 instalado (--break-system-packages)."
+    else
+        echo "  AVISO: não foi possível instalar o PySide6 automaticamente." >&2
+        echo "         Instale manualmente com:" >&2
+        echo "             pip3 install PySide6 --break-system-packages" >&2
+    fi
+else
+    echo "  -> PySide6 já disponível, pulando instalação."
+fi
+
+# ── 2. Permissões ────────────────────────────────────────────────────────
+chmod 755 "$APP_DIR/main.py" || true
+chmod 755 /usr/bin/grub-theme-installer || true
+
+# ── 3. Cache de ícones e desktop database ───────────────────────────────────
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database -q /usr/share/applications || true
+fi
+
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+    gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor || true
+fi
+
+echo "GRUB Theme Installer instalado com sucesso."
+echo "Execute pelo menu de aplicativos ou via: grub-theme-installer"
+
+exit 0

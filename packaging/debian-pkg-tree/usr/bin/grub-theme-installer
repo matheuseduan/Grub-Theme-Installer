@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# ═══════════════════════════════════════════════════════════════════════════
+#  GRUB Theme Installer — launcher instalado pelo pacote .deb
+#
+#  Apenas garante o ambiente gráfico (DISPLAY/XAUTHORITY/WAYLAND_DISPLAY)
+#  e chama main.py. A elevação para root é feita pelo próprio main.py
+#  (via pkexec, com diálogo gráfico, ou sudo como alternativa).
+# ═══════════════════════════════════════════════════════════════════════════
+set -e
+
+APP_DIR="/opt/grub-theme-installer"
+
+exec python3 "$APP_DIR/main.py" "$@"
