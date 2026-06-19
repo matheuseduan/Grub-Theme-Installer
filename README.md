@@ -155,12 +155,6 @@ grub-theme-installer/
 │               └── doc/grub-theme-installer/
 │                   ├── README.md
 │                   └── copyright
-├── .github/
-│   ├── workflows/
-│   │   └── build-deb.yml      # CI: gera o .deb e cria Release
-│   └── ISSUE_TEMPLATE/
-│       ├── bug_report.md
-│       └── feature_request.md
 └── README.md
 ```
 
