@@ -79,7 +79,7 @@ grub-theme-installer
 ```bash
 # Clone o repositório
 git clone https://github.com/matheuseduan/Grub-Theme-Installer.git
-cd grub-theme-installer
+cd Grub-Theme-Installer/
 
 # Instale a dependência Python
 pip3 install -r requirements.txt --break-system-packages
