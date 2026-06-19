@@ -65,7 +65,7 @@
 Baixe o `.deb` na [página de Releases](../../releases/latest) e instale:
 
 ```bash
-sudo apt install ./grub-theme-installer_*.deb
+sudo apt install ./grub-theme-installer_1.0.1_all.deb
 ```
 
 O `apt` resolve todas as dependências automaticamente. Após instalar, o programa aparece no **menu de aplicativos** ou pode ser chamado pelo terminal:
