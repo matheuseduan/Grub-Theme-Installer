@@ -1,6 +1,6 @@
 # 🎨 GRUB Theme Installer
 
-> Interface gráfica moderna (PySide6 / Qt) para instalar temas personalizados no GRUB2 em sistemas Debian e derivados.
+> Interface gráfica (PySide6 / Qt) para instalar temas personalizados no GRUB2 em sistemas Debian e derivados.
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)
 ![PySide6](https://img.shields.io/badge/PySide6-6.6%2B-green?logo=qt)
