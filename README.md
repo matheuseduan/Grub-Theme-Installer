@@ -155,7 +155,8 @@ grub-theme-installer/
 │               └── doc/grub-theme-installer/
 │                   ├── README.md
 │                   └── copyright
-└── README.md
+├── README.md
+└── SECURITY.md
 ```
 
 ---
