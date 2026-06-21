@@ -2,6 +2,7 @@
 
 > Interface gráfica (PySide6 / Qt) para instalar temas personalizados no GRUB2 em sistemas Debian e derivados.
 
+![Dev Matheus Eduan](https://img.shields.io/badge/Dev-Matheus_Eduan-blue?&logo=devbox)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)
 ![PySide6](https://img.shields.io/badge/PySide6-6.6%2B-green?logo=qt)
 ![Debian](https://img.shields.io/badge/Debian%20%2F%20Ubuntu-compatible-red?logo=debian)
