@@ -1,12 +1,5 @@
 # Política de Segurança
 
-## Versões Suportadas
-
-| Versão  | Suportada           |
-| ------- | ------------------- |
-| 1.0.1   | :white_check_mark:  |
-| < 1.0   | :x:                 |
-
 ## Reportando uma Vulnerabilidade
 
 Por favor, reporte vulnerabilidades de segurança através do recurso nativo
